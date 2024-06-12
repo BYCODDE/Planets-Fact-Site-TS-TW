@@ -1,59 +1,102 @@
 import { Link } from "react-router-dom";
 export default function Menu() {
   return (
-    <>
+    <div className=" flex flex-col p-[24px]">
       <header className="flex justify-between items-center	">
         <h1 className="font-normal text-[28px] tracking-[-1.05px] leading-normal">
           the planets
         </h1>
         <img src="src\assets\icon-hamburger.svg" alt="" />
       </header>
-      <nav className="navigation-menu font-spartan  font-bold leading-[25px] tracking-[1.364px]">
-        <ul>
-          <li>
-            <div></div>
-            <Link className="  " to="/mercury">
-              Mercury
-            </Link>
+      <nav className="navigation-menu font-spartan  font-bold leading-[25px] tracking-[1.364px] mt-[44px] text-[19px]">
+        <ul className="flex flex-col gap-[20px]">
+          <li className="flex items-center justify-between  	">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#DEF4FC] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/mercury">
+                Mercury
+              </Link>
+            </div>
             <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/venus">
-              Venus
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+          <li className="flex items-center justify-between">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#F7CC7F] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/venus">
+                Venus
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/earth">
-              Earth
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center justify-between">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#545BFE] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/earth">
+                Earth
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/mars">
-              Mars
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center  justify-between ">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#FF6A45] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/mars">
+                Mars
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/jupiter">
-              Jupiter
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center  justify-between ">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#ECAD7A] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/jupiter">
+                Jupiter
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/saturn">
-              Saturn
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center  justify-between ">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/saturn">
+                Saturn
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/uranus">
-              Uranus
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center  justify-between ">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#65F0D5] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/uranus">
+                Uranus
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
-          <li>
-            <Link className="" to="/neptune">
-              Neptune
-            </Link>
+          <hr className="h-[1px] w-full opacity-10" />
+
+          <li className="flex items-center  justify-between ">
+            <div className="flex gap-[25px]">
+              <div className="bg-[#497EFA] w-[20px] h-[20px] rounded-[50%]"></div>
+              <Link className="" to="/neptune">
+                Neptune
+              </Link>
+            </div>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
