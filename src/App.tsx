@@ -14,9 +14,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu />
+        <Menu  />
         <Routes>
-          <Route path="/" element={<Menu />} />
           <Route path="mercury" element={<Mercury />} />
           <Route path="venus" element={<Venus />} />
           <Route path="earth" element={<Earth />} />
@@ -25,7 +24,7 @@ function App() {
           <Route path="saturn" element={<Saturn />} />
           <Route path="uranus" element={<Uranus />} />
           <Route path="neptune" element={<Neptune />} />
-        </Routes>
+        </Routes> 
       </BrowserRouter>
     </>
   );
