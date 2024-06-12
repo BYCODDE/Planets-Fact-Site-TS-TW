@@ -2,22 +2,20 @@ import { Link } from "react-router-dom";
 export default function Menu() {
   return (
     <>
-      <header className="flex justify-between align-center">
+      <header className="flex justify-between items-center	">
         <h1 className="font-normal text-[28px] tracking-[-1.05px] leading-normal">
           the planets
         </h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-          <g fill="#FFF" fill-rule="evenodd">
-            <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-          </g>
-        </svg>
+        <img src="src\assets\icon-hamburger.svg" alt="" />
       </header>
       <nav className="navigation-menu font-spartan  font-bold leading-[25px] tracking-[1.364px]">
         <ul>
           <li>
+            <div></div>
             <Link className="  " to="/mercury">
               Mercury
             </Link>
+            <img src="src\assets\icon-chevron.svg" alt="icon-chevron" />
           </li>
           <li>
             <Link className="" to="/venus">
