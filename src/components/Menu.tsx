@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 export default function Menu() {
   return (
     <div className=" flex flex-col p-[24px]">
@@ -13,7 +14,7 @@ export default function Menu() {
           <li className="flex items-center justify-between  	">
             <div className="flex gap-[25px]">
               <div className="bg-[#DEF4FC] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/mercury">
+              <Link className="" to="/planet/mercury">
                 Mercury
               </Link>
             </div>
@@ -23,7 +24,7 @@ export default function Menu() {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#F7CC7F] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/venus">
+              <Link className="" to="/planet/venus">
                 Venus
               </Link>
             </div>
@@ -34,7 +35,7 @@ export default function Menu() {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#545BFE] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/earth">
+              <Link className="" to="/planet/earth">
                 Earth
               </Link>
             </div>
@@ -45,7 +46,7 @@ export default function Menu() {
           <li className="flex items-center  justify-between ">
             <div className="flex gap-[25px]">
               <div className="bg-[#FF6A45] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/mars">
+              <Link className="" to="/planet/mars">
                 Mars
               </Link>
             </div>
@@ -56,7 +57,7 @@ export default function Menu() {
           <li className="flex items-center  justify-between ">
             <div className="flex gap-[25px]">
               <div className="bg-[#ECAD7A] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/jupiter">
+              <Link className="" to="/planet/jupiter">
                 Jupiter
               </Link>
             </div>
@@ -67,7 +68,7 @@ export default function Menu() {
           <li className="flex items-center  justify-between ">
             <div className="flex gap-[25px]">
               <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/saturn">
+              <Link className="" to="/planet/saturn">
                 Saturn
               </Link>
             </div>
@@ -78,7 +79,7 @@ export default function Menu() {
           <li className="flex items-center  justify-between ">
             <div className="flex gap-[25px]">
               <div className="bg-[#65F0D5] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/uranus">
+              <Link className="" to="/planet/uranus">
                 Uranus
               </Link>
             </div>
@@ -89,7 +90,7 @@ export default function Menu() {
           <li className="flex items-center  justify-between ">
             <div className="flex gap-[25px]">
               <div className="bg-[#497EFA] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link className="" to="/neptune">
+              <Link className="" to="/planet/neptune">
                 Neptune
               </Link>
             </div>
