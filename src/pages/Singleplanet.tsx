@@ -9,5 +9,9 @@ export default function Singleplanet() {
 
   console.log(currentPlanet);
 
-  return <div>singlePlanet</div>;
+  return(<>
+  <div></div>
+  </>)
+
+
 }
