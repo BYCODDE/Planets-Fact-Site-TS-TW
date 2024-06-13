@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import data from "../data.json";
 import { useParams } from "react-router-dom";
 import { BurgerProps } from "../components/Menu";
-
+import bgPattern from "../assets/background-stars.svg";
 const Singleplanet: React.FC<BurgerProps> = ({
   Burger,
   setBurger,
@@ -18,7 +18,14 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
   return (
     <>
-      <div className="flex flex-col p-[24px]">
+      <div
+        className="flex flex-col p-[24px] h-full   bg-cover"
+        style={{
+          backgroundImage: `url(${bgPattern})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
         <div className="flex  font-bold text-[9px]  tracking-[1.929px] font-spartan mt-[40px] justify-between">
           <h3 className="cursor-pointer">OVERVIEW</h3>
