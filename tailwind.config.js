@@ -7,7 +7,11 @@ export default {
         sans: ["Antonio", "sans-serif"],
         spartan: ["League Spartan", "sans-serif"],
       },
+      filter: {
+        "custom-filter":
+          "invert(99%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(111%) contrast(101%)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-filters")],
 };
