@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
-type BurgerProps = {
+
+
+export  type BurgerProps = {
   Burger: boolean;
   setBurger: React.Dispatch<React.SetStateAction<boolean>>;
+
+  burger_svg: string;
 };
 
-const Menu: React.FC<BurgerProps> = ({ Burger, setBurger }) => {
+const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
   return (
     <div className="flex flex-col p-[24px]">
-      <Header />
-      <hr className="h-[1px] w-full opacity-10 mt-[20px] absolute top-[61px] right-0 left-0" />
+      <Header Burger={Burger} setBurger={setBurger}   burger_svg={burger_svg} />
+
       <nav
         className={`navigation-menu ${
           Burger ? "hidden" : "block"
