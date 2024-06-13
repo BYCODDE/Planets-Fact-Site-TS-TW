@@ -16,6 +16,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
 
   const planetImagePath = currentPlanet?.images.planet;
+  const wikipediaLink = currentPlanet?.geology.source;
   console.log(currentPlanet);
 
   return (
@@ -44,9 +45,23 @@ const Singleplanet: React.FC<BurgerProps> = ({
         </div>
         <div className="text-[#FFFFFF] text-center">
           <h2 className=" text-[40px]">{currentPlanet?.name}</h2>
-          <p className="font-spartan  text-[11px] leading-[22px]  normal-case font-normal opacity-70 mt-[16px]  mb-[32px]">
+          <p className="font-spartan  text-[11px] leading-[22px]  normal-case font-normal opacity-80 mt-[16px]  mb-[32px]">
             {currentPlanet?.overview.content}
           </p>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <a
+            className="normal-case text-[#FFFFFF] opacity-50 text-[12px] font-spartan font-[300] leading-[25px]   tracking-[1.5px] "
+            href={wikipediaLink}
+          >
+            Source : <span className="underline font-bold">Wikipedia</span>
+            <img
+              src="../src/assets/icon-source.svg"
+              alt="icon-source"
+              className="inline-block ml-[5px] font-bold"
+            />
+          </a>
         </div>
       </div>
     </>
