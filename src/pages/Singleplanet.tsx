@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import data from "../data.json";
 import { useParams } from "react-router-dom";
 import { BurgerProps } from "../components/Menu";
-import bgPattern from "../assets/background-stars.svg";
+import bgPattern from "/assets/background-stars.svg";
 
 const Singleplanet: React.FC<BurgerProps> = ({
   Burger,
@@ -56,7 +56,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
           >
             Source : <span className="underline font-bold">Wikipedia</span>
             <img
-              src="../src/assets/icon-source.svg"
+              src="/assets/icon-source.svg"
               alt="icon-source"
               className="inline-block ml-[5px] font-bold"
             />

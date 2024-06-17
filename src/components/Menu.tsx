@@ -27,7 +27,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Mercury
               </Link>
             </div>
-            <img src="../src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -37,7 +37,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Venus
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -47,7 +47,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Earth
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -57,7 +57,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Mars
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -67,7 +67,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Jupiter
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -77,7 +77,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Saturn
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -87,7 +87,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Uranus
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
@@ -97,7 +97,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Neptune
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
         </ul>
       </nav>

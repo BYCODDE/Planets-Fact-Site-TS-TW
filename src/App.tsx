@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./components/Menu";
 import Singleplanet from "./pages/Singleplanet";
 import { useState } from "react";
-import burger_svg from "./assets/icon-hamburger.svg";
+import burger_svg from "/assets/icon-hamburger.svg";
 
 function App() {
   const [Burger, setBurger] = useState<boolean>(false);
