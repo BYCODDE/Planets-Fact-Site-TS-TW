@@ -16,9 +16,34 @@ const Singleplanet: React.FC<BurgerProps> = ({
     (planet) => planet.name.toLowerCase() === name?.toLowerCase()
   );
 
+const getPlanetClass = (planetName: string | undefined) => {
+  switch (planetName) {
+    case "Venus":
+      return "w-[154px] h-[154px]";
+    case "Earth":
+      return "w-[173px] h-[173px]";
+    case "Mars":
+      return "w-[129px] h-[129px]";
+    case "Jupiter":
+      return "w-[224px] h-[224px]";
+    case "Saturn":
+      return "w-[256px] h-[256px]";
+    case "Uranus":
+      return "w-[176px] h-[176px]";
+    case "Neptune":
+      return "w-[173px] h-[173px]";
+    default:
+      return "w-[111px] h-[111px]";
+  }
+};
+
+
+
+const planetClass = getPlanetClass(currentPlanet?.name);
+
   const planetImagePath = currentPlanet?.images.planet;
   const wikipediaLink = currentPlanet?.geology.source;
-  console.log(currentPlanet);
+  console.log(currentPlanet?.name);
 
   return (
     <>
@@ -47,7 +72,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
           <div className="flex justify-center mt-[95px] mb-[98px]">
             <img
               src={planetImagePath}
-              className="w-[111px] h-[111px] "
+              className={planetClass}
               alt="planet_img"
             />
           </div>
