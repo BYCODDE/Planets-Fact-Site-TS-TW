@@ -13,11 +13,33 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Menu Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />}
+          element={
+            <Menu
+              Burger={Burger}
+              setBurger={setBurger}
+              burger_svg={burger_svg}
+            />
+          }
         />
         <Route
           path="/planet/:name"
-          element={<Singleplanet Burger={Burger} setBurger={setBurger}  burger_svg={burger_svg} />}
+          element={
+            <Singleplanet
+              Burger={Burger}
+              setBurger={setBurger}
+              burger_svg={burger_svg}
+            />
+          }
+        />
+        <Route
+          path="/planet/:name/:details"
+          element={
+            <Singleplanet
+              Burger={Burger}
+              setBurger={setBurger}
+              burger_svg={burger_svg}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

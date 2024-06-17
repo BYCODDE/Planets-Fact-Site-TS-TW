@@ -12,7 +12,7 @@ export  type BurgerProps = {
 const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
   return (
     <div className="flex flex-col p-[24px]">
-      <Header Burger={Burger} setBurger={setBurger}   burger_svg={burger_svg} />
+      <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
 
       <nav
         className={`navigation-menu ${
@@ -23,7 +23,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#DEF4FC] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/mercury">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/mercury/overview"
+              >
                 Mercury
               </Link>
             </div>
@@ -33,7 +36,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#F7CC7F] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/venus">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/venus/overview"
+              >
                 Venus
               </Link>
             </div>
@@ -43,7 +49,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#545BFE] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/earth">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/earth/overview"
+              >
                 Earth
               </Link>
             </div>
@@ -53,7 +62,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#FF6A45] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/mars">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/mars/overview"
+              >
                 Mars
               </Link>
             </div>
@@ -63,7 +75,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#ECAD7A] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/jupiter">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/jupiter/overview"
+              >
                 Jupiter
               </Link>
             </div>
@@ -73,7 +88,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/saturn">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/saturn/overview"
+              >
                 Saturn
               </Link>
             </div>
@@ -83,7 +101,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#65F0D5] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/uranus">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/uranus/overview"
+              >
                 Uranus
               </Link>
             </div>
@@ -93,7 +114,10 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
           <li className="flex items-center justify-between">
             <div className="flex gap-[25px]">
               <div className="bg-[#497EFA] w-[20px] h-[20px] rounded-[50%]"></div>
-              <Link onClick={() => setBurger(!Burger)} to="/planet/neptune">
+              <Link
+                onClick={() => setBurger(!Burger)}
+                to="/planet/neptune/overview"
+              >
                 Neptune
               </Link>
             </div>
