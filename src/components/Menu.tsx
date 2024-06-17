@@ -27,7 +27,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
                 Mercury
               </Link>
             </div>
-            <img src="src/assets/icon-chevron.svg" alt="icon-chevron" />
+            <img src="../src/assets/icon-chevron.svg" alt="icon-chevron" />
           </li>
           <hr className="h-[1px] w-full opacity-10" />
           <li className="flex items-center justify-between">
