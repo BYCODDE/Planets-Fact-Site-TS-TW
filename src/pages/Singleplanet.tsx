@@ -137,9 +137,19 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
       <div className="text-[#FFFFFF] text-center">
         <h2 className="text-[40px]">{currentPlanet?.name}</h2>
-        <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
-          {currentPlanet?.overview.content}
-        </p>
+        {details === "structure" ? (
+          <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+            {currentPlanet?.structure.content}
+          </p>
+        ) : details === "surface" ? (
+          <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+            {currentPlanet?.geology.content}
+          </p>
+        ) : (
+          <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+            {currentPlanet?.overview.content}
+          </p>
+        )}
       </div>
 
       <div className="flex justify-center items-center">
