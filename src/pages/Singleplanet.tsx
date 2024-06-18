@@ -78,21 +78,21 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
       <div className="flex font-bold text-[9px] tracking-[1.929px] font-spartan mt-[40px] justify-between">
         <Link
-          className={`${details === "overview" ? planetStyles : ""}`}
+          className={`${details === "overview" ? planetStyles : "opacity-50"}`}
           to={`/planet/${currentPlanet?.name}/overview`}
         >
           OVERVIEW
         </Link>
 
         <Link
-          className={`${details === "structure" ? planetStyles : ""}`}
+          className={`${details === "structure" ? planetStyles : "opacity-50"}`}
           to={`/planet/${currentPlanet?.name}/structure`}
         >
           Structure
         </Link>
 
         <Link
-          className={`${details === "surface" ? planetStyles : ""}`}
+          className={`${details === "surface" ? planetStyles : "opacity-50"}`}
           to={`/planet/${currentPlanet?.name}/surface`}
         >
           Surface
