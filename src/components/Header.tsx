@@ -1,7 +1,6 @@
 import React from "react";
 import { BurgerProps } from "./Menu";
 
-
 const Header: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
   return (
     <>

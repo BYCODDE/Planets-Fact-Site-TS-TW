@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
-
-export  type BurgerProps = {
+export type BurgerProps = {
   Burger: boolean;
   setBurger: React.Dispatch<React.SetStateAction<boolean>>;
 
