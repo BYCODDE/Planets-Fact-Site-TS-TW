@@ -11,12 +11,13 @@ const Singleplanet: React.FC<BurgerProps> = ({
   burger_svg,
 }) => {
   const { name, details } = useParams<{ name: string; details: string }>();
-  console.log(name);
-  console.log(details);
+
 
   const currentPlanet = data.find(
     (planet) => planet.name.toLowerCase() === name?.toLowerCase()
   );
+
+
 
   const getPlanetClass = (planetName: string | undefined) => {
     switch (planetName) {
@@ -63,6 +64,10 @@ const Singleplanet: React.FC<BurgerProps> = ({
   const planetClass = getPlanetClass(currentPlanet?.name);
   const planetStyles = getPlanetStyles(currentPlanet?.name);
   const planetImagePath = currentPlanet?.images.planet;
+  const planetImagePath2 = currentPlanet?.images.internal;
+  const planetImagePath3 = currentPlanet?.images.geology;
+  console.log(details);
+
   const wikipediaLink = currentPlanet?.geology.source;
 
   return (
@@ -102,7 +107,32 @@ const Singleplanet: React.FC<BurgerProps> = ({
       <hr className="h-[1px] w-full opacity-10 mt-[20px] absolute top-[121px] right-0 left-0" />
 
       <div className="flex justify-center mt-[95px] mb-[98px]">
-        <img src={planetImagePath} className={planetClass} alt="planet_img" />
+        {details === "structure" ? (
+          <img
+            src={planetImagePath2}
+            className={planetClass}
+            alt="planet_structure"
+          />
+        ) : details === "surface" ? (
+          <div className="relative">
+            <img
+              src={planetImagePath}
+              className={planetClass}
+              alt="planet_surface"
+            />
+            <img
+              src={planetImagePath3}
+              className="absolute w-[80%] h-[160px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              alt="planet_geology"
+            />
+          </div>
+        ) : (
+          <img
+            src={planetImagePath}
+            className={planetClass}
+            alt="planet_default"
+          />
+        )}
       </div>
 
       <div className="text-[#FFFFFF] text-center">
