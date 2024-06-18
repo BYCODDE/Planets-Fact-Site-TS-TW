@@ -10,14 +10,12 @@ const Singleplanet: React.FC<BurgerProps> = ({
   setBurger,
   burger_svg,
 }) => {
-  const { name, details } = useParams<{ name: string; details: string }>();
-
+  const { name  } = useParams<{ name: string; }>();
+const { details } = useParams<{ details: string }>();
 
   const currentPlanet = data.find(
     (planet) => planet.name.toLowerCase() === name?.toLowerCase()
   );
-
-
 
   const getPlanetClass = (planetName: string | undefined) => {
     switch (planetName) {
@@ -66,7 +64,6 @@ const Singleplanet: React.FC<BurgerProps> = ({
   const planetImagePath = currentPlanet?.images.planet;
   const planetImagePath2 = currentPlanet?.images.internal;
   const planetImagePath3 = currentPlanet?.images.geology;
-  console.log(details);
 
   const wikipediaLink = currentPlanet?.geology.source;
 

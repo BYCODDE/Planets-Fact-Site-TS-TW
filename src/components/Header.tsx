@@ -16,6 +16,7 @@ const Header: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
         />
       </header>
       <hr className="h-[1px] w-full opacity-10 mt-[20px] absolute top-[61px] right-0 left-0" />
+      
     </>
   );
 };
