@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 
 export type BurgerProps = {
@@ -8,17 +9,16 @@ export type BurgerProps = {
   burger_svg: string;
 };
 
-const Menu: React.FC<BurgerProps> = ({ Burger, setBurger }) => {
-
-console.log(Burger);
-
+const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
+  console.log(Burger);
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-black bg-opacity-90 flex justify-center items-center p-[24px] ${
+      className={`fixed inset-0 z-50 bg-[#070724] flex justify-center  p-[24px] flex-col ${
         Burger ? "block" : "hidden"
       }`}
     >
+      <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
       <nav
         className={` font-spartan font-bold leading-[25px] tracking-[1.364px] mt-[44px] text-[19px] w-full h-full`}
       >

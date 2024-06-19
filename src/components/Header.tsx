@@ -4,7 +4,7 @@ import { BurgerProps } from "./Menu";
 const Header: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
   return (
     <>
-      <header className="flex justify-between items-center relative">
+      <header className="flex justify-between items-center  ">
         <h1 className="font-normal text-[28px] tracking-[-1.05px] leading-normal">
           the planets
         </h1>
