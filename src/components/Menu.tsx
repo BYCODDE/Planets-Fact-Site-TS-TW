@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Header from "./Header";
+
 
 export type BurgerProps = {
   Burger: boolean;
@@ -8,15 +8,19 @@ export type BurgerProps = {
   burger_svg: string;
 };
 
-const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
-  return (
-    <div className="flex flex-col p-[24px]">
-      <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
+const Menu: React.FC<BurgerProps> = ({ Burger, setBurger }) => {
 
+console.log(Burger);
+
+
+  return (
+    <div
+      className={`fixed inset-0 z-50 bg-black bg-opacity-90 flex justify-center items-center p-[24px] ${
+        Burger ? "block" : "hidden"
+      }`}
+    >
       <nav
-        className={`navigation-menu ${
-          Burger ? "hidden" : "block"
-        } font-spartan font-bold leading-[25px] tracking-[1.364px] mt-[44px] text-[19px]`}
+        className={` font-spartan font-bold leading-[25px] tracking-[1.364px] mt-[44px] text-[19px] w-full h-full`}
       >
         <ul className="flex flex-col gap-[20px]">
           <li className="flex items-center justify-between">

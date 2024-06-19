@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import data from "../data.json";
 import { useParams } from "react-router-dom";
-import { BurgerProps } from "../components/Menu";
+import Menu, { BurgerProps } from "../components/Menu";
 import bgPattern from "/assets/background-stars.svg";
 import { Link } from "react-router-dom";
 
@@ -10,9 +10,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
   setBurger,
   burger_svg,
 }) => {
-  const { name  } = useParams<{ name: string; }>();
-const { details } = useParams<{ details: string }>();
-
+  const { name, details } = useParams<{ name: string; details: string }>();
   const currentPlanet = data.find(
     (planet) => planet.name.toLowerCase() === name?.toLowerCase()
   );
@@ -69,7 +67,7 @@ const { details } = useParams<{ details: string }>();
 
   return (
     <div
-      className="flex flex-col p-[24px] h-full bg-cover"
+      className="flex flex-col p-[24px] h-full bg-cover "
       style={{
         backgroundImage: `url(${bgPattern})`,
         backgroundRepeat: "no-repeat",
@@ -77,7 +75,7 @@ const { details } = useParams<{ details: string }>();
       }}
     >
       <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
-
+      <Menu Burger={Burger} setBurger={setBurger} burger_svg={burger_svg}  />
       <div className="flex font-bold text-[9px] tracking-[1.929px] font-spartan mt-[40px] justify-between">
         <Link
           className={`${details === "overview" ? planetStyles : "opacity-50"}`}
