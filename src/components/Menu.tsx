@@ -14,7 +14,7 @@ const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-[#070724] flex justify-center  p-[24px] flex-col ${
+      className={`fixed inset-0 z-50 bg-[#070724] flex justify-center  p-[24px] flex-col  ${
         Burger ? "block" : "hidden"
       }`}
     >
