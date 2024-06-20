@@ -70,7 +70,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
   return (
     <div
-      className="flex flex-col p-[24px] h-full bg-cover "
+      className="flex flex-col p-[24px] pt-[30px] h-full bg-cover "
       style={{
         backgroundImage: `url(${bgPattern})`,
         backgroundRepeat: "no-repeat",
@@ -83,7 +83,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
       )}
 
       {isMediumDevice ? (
-        <div className="flex font-[400] text-[15px] tracking-[1.3px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
+        <div className="flex font-[400] text-[15px] tracking-[1.5px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
           <Link to="/planet/mercury/overview">Mercury</Link>
           <Link to="/planet/venus/overview">Venus</Link>
           <Link to="/planet/earth/overview">Earth</Link>
@@ -156,12 +156,12 @@ const Singleplanet: React.FC<BurgerProps> = ({
         )}
       </div>
       {isMediumDevice ? (
-        <div className="text-[#FFFFFF] flex justify-between items-center">
+        <div className="text-[#FFFFFF] flex justify-between items-center p-[30px]">
           <div className={`${isMediumDevice ? "max-w-[339px]" : ""}`}>
             {" "}
             <h2 className="text-[48px]">{currentPlanet?.name}</h2>
             {details === "structure" ? (
-              <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+              <p className="font-spartan text-[15px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
                 {currentPlanet?.structure.content}
               </p>
             ) : details === "surface" ? (
@@ -169,7 +169,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
                 {currentPlanet?.geology.content}
               </p>
             ) : (
-              <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+              <p className="font-spartan text-[15px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
                 {currentPlanet?.overview.content}
               </p>
             )}
@@ -251,8 +251,16 @@ const Singleplanet: React.FC<BurgerProps> = ({
         </>
       )}
 
-      <div className="flex justify-center flex-col gap-[10px] pb-[30px] text-[#FFFFFF] font-[500]">
-        <div className="border border-solid border-white border-opacity-20 p-[16px] flex justify-between items-center">
+      <div
+        className={`${
+          isMediumDevice ? "flex-row gap-0 justify-between p-[30px] pt-[0px]" : "flex-col"
+        } flex justify-center  gap-[10px] pb-[30px] text-[#FFFFFF] font-[500]`}
+      >
+        <div
+          className={`${
+            isMediumDevice ? "flex-col items-baseline w-[164px]	" : "flex-row"
+          }   border border-solid border-white border-opacity-20 p-[20px] flex justify-between items-center`}
+        >
           <h3 className="tracking-[1.5px] opacity-50 font-spartan leading-[16px] text-[13px] text-[#FFF]">
             ROTATION TIME
           </h3>
@@ -260,7 +268,11 @@ const Singleplanet: React.FC<BurgerProps> = ({
             {currentPlanet?.rotation}
           </p>
         </div>
-        <div className="border border-solid border-white border-opacity-20 p-[20px] flex justify-between items-center">
+        <div
+          className={`${
+            isMediumDevice ? "flex-col items-baseline	" : "flex-row"
+          }   border border-solid border-white border-opacity-20 p-[20px] flex justify-between items-center`}
+        >
           <h3 className="tracking-[1.5px] opacity-50 font-spartan leading-[16px] text-[13px] text-[#FFF]">
             REVOLUTION TIME
           </h3>
@@ -268,7 +280,11 @@ const Singleplanet: React.FC<BurgerProps> = ({
             {currentPlanet?.revolution}
           </p>
         </div>
-        <div className="border border-solid border-white border-opacity-20 p-[16px] flex justify-between items-center">
+        <div
+          className={`${
+            isMediumDevice ? "flex-col items-baseline w-[164px]		" : "flex-row"
+          }   border border-solid border-white border-opacity-20 p-[20px] flex justify-between items-center`}
+        >
           <h3 className="tracking-[1.5px] opacity-50 font-spartan leading-[16px] text-[13px] text-[#FFF]">
             RADIUS
           </h3>
@@ -276,7 +292,11 @@ const Singleplanet: React.FC<BurgerProps> = ({
             {currentPlanet?.radius}
           </p>
         </div>
-        <div className="border border-solid border-white border-opacity-20 p-[16px] flex justify-between items-center">
+        <div
+          className={`${
+            isMediumDevice ? "flex-col items-baseline w-[164px]		" : "flex-row"
+          }   border border-solid border-white border-opacity-20 p-[20px] flex justify-between items-center`}
+        >
           <h3 className="tracking-[1.5px] opacity-50 font-spartan leading-[16px] text-[13px] text-[#FFF]">
             AVERAGE TEMP.
           </h3>
