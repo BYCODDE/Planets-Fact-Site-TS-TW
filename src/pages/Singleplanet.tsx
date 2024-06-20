@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Menu, { BurgerProps } from "../components/Menu";
 import bgPattern from "/assets/background-stars.svg";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Singleplanet: React.FC<BurgerProps> = ({
   Burger,
@@ -15,24 +16,26 @@ const Singleplanet: React.FC<BurgerProps> = ({
     (planet) => planet.name.toLowerCase() === name?.toLowerCase()
   );
 
+  const isMediumDevice = useMediaQuery("only screen and (min-width : 769px)");
+
   const getPlanetClass = (planetName: string | undefined) => {
     switch (planetName) {
       case "Venus":
-        return "w-[154px] h-[154px]";
+        return isMediumDevice ? "w-[253px] h-[253px]" : "w-[154px] h-[154px]";
       case "Earth":
-        return "w-[173px] h-[173px]";
+        return isMediumDevice ? "w-[285px] h-[285px]" : "w-[173px] h-[173px]";
       case "Mars":
-        return "w-[129px] h-[129px]";
+        return isMediumDevice ? "w-[213px] h-[213px]" : "w-[129px] h-[129px]";
       case "Jupiter":
-        return "w-[224px] h-[224px]";
+        return isMediumDevice ? "w-[369px] h-[369px]" : "w-[224px] h-[224px]";
       case "Saturn":
-        return "w-[256px] h-[256px]";
+        return isMediumDevice ? "w-[340px] h-[340px]" : "w-[256px] h-[256px]";
       case "Uranus":
-        return "w-[176px] h-[176px]";
+        return isMediumDevice ? "w-[290px] h-[290px]" : "w-[176px] h-[176px]";
       case "Neptune":
-        return "w-[173px] h-[173px]";
+        return isMediumDevice ? "w-[285px] h-[285px]" : "w-[173px] h-[173px]";
       default:
-        return "w-[111px] h-[111px]";
+        return isMediumDevice ? "w-[184px] h-[184px]" : "w-[111px] h-[111px]";
     }
   };
 
@@ -75,29 +78,49 @@ const Singleplanet: React.FC<BurgerProps> = ({
       }}
     >
       <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
-      <Menu Burger={Burger} setBurger={setBurger} burger_svg={burger_svg}  />
-      <div className="flex font-bold text-[9px] tracking-[1.929px] font-spartan mt-[40px] justify-between">
-        <Link
-          className={`${details === "overview" ? planetStyles : "opacity-50"}`}
-          to={`/planet/${currentPlanet?.name}/overview`}
-        >
-          OVERVIEW
-        </Link>
+      {isMediumDevice ? null : (
+        <Menu Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
+      )}
 
-        <Link
-          className={`${details === "structure" ? planetStyles : "opacity-50"}`}
-          to={`/planet/${currentPlanet?.name}/structure`}
-        >
-          Structure
-        </Link>
+      {isMediumDevice ? (
+        <div className="flex font-[500] text-[13px] tracking-[1.3px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
+          <Link to="/planet/mercury/overview">Mercury</Link>
+          <Link to="/planet/venus/overview">Venus</Link>
+          <Link to="/planet/earth/overview">Earth</Link>
+          <Link to="/planet/mars/overview">Mars</Link>
+          <Link to="/planet/jupiter/overview">Jupiter</Link>
+          <Link to="/planet/saturn/overview">Saturn</Link>
+          <Link to="/planet/uranus/overview">Uranus</Link>
+          <Link to="/planet/neptune/overview">Neptune</Link>
+        </div>
+      ) : (
+        <div className="flex font-bold text-[9px] tracking-[1.929px] font-spartan mt-[40px] justify-between">
+          <Link
+            className={`${
+              details === "overview" ? planetStyles : "opacity-50"
+            }`}
+            to={`/planet/${currentPlanet?.name}/overview`}
+          >
+            OVERVIEW
+          </Link>
 
-        <Link
-          className={`${details === "surface" ? planetStyles : "opacity-50"}`}
-          to={`/planet/${currentPlanet?.name}/surface`}
-        >
-          Surface
-        </Link>
-      </div>
+          <Link
+            className={`${
+              details === "structure" ? planetStyles : "opacity-50"
+            }`}
+            to={`/planet/${currentPlanet?.name}/structure`}
+          >
+            Structure
+          </Link>
+
+          <Link
+            className={`${details === "surface" ? planetStyles : "opacity-50"}`}
+            to={`/planet/${currentPlanet?.name}/surface`}
+          >
+            Surface
+          </Link>
+        </div>
+      )}
 
       <hr className="h-[1px] w-full opacity-10 mt-[20px] absolute top-[121px] right-0 left-0" />
 

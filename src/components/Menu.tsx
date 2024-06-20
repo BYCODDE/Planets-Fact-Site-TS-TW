@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
-
 export type BurgerProps = {
   Burger: boolean;
   setBurger: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,8 +9,6 @@ export type BurgerProps = {
 };
 
 const Menu: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
-  console.log(Burger);
-
   return (
     <div
       className={`fixed inset-0 z-50 bg-[#070724] flex justify-center  p-[24px] flex-col  ${
