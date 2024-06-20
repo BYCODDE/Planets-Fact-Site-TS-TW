@@ -83,7 +83,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
       )}
 
       {isMediumDevice ? (
-        <div className="flex font-[500] text-[13px] tracking-[1.3px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
+        <div className="flex font-[400] text-[15px] tracking-[1.3px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
           <Link to="/planet/mercury/overview">Mercury</Link>
           <Link to="/planet/venus/overview">Venus</Link>
           <Link to="/planet/earth/overview">Earth</Link>
@@ -122,7 +122,10 @@ const Singleplanet: React.FC<BurgerProps> = ({
         </div>
       )}
 
-      <hr className="h-[1px] w-full opacity-10 mt-[20px] absolute top-[121px] right-0 left-0" />
+      <hr
+        className={`${isMediumDevice ? "mt-[30px]" : "mt-[20px]"}
+      "h-[1px] w-full opacity-10  absolute top-[121px] right-0 left-0"`}
+      />
 
       <div className="flex justify-center mt-[95px] mb-[98px]">
         {details === "structure" ? (
@@ -162,7 +165,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
                 {currentPlanet?.structure.content}
               </p>
             ) : details === "surface" ? (
-              <p className="font-spartan text-[11px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
+              <p className="font-spartan text-[15px] leading-[22px] normal-case font-normal opacity-80 mt-[16px] mb-[32px]">
                 {currentPlanet?.geology.content}
               </p>
             ) : (
@@ -170,7 +173,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
                 {currentPlanet?.overview.content}
               </p>
             )}
-            <div className="flex ">
+            <div className="flex  ">
               <a
                 className="normal-case text-[#FFFFFF] opacity-50 text-[12px] font-spartan font-[300] leading-[25px] tracking-[1.5px] mb-[28px]"
                 href={wikipediaLink}
@@ -187,7 +190,8 @@ const Singleplanet: React.FC<BurgerProps> = ({
           <div>
             <div className="flex font-bold text-[15px] tracking-[2px] font-spartan mt-[40px] justify-center flex-col  leading-[25px] gap-[16px]">
               <Link
-                className={`border border-[#fff] border-opacity-20 w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]`}
+                className={`border border-[#fff] border-opacity-20 w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]
+                  font-[400]`}
                 to={`/planet/${currentPlanet?.name}/overview`}
               >
                 <span className="opacity-50">01</span>
@@ -195,7 +199,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
               </Link>
 
               <Link
-                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]`}
+                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]  font-[400]`}
                 to={`/planet/${currentPlanet?.name}/structure`}
               >
                 <span className="opacity-50">02</span>
@@ -203,7 +207,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
               </Link>
 
               <Link
-                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]`}
+                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]  font-[400]`}
                 to={`/planet/${currentPlanet?.name}/surface`}
               >
                 <span className="opacity-50">03</span>
