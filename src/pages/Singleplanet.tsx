@@ -242,7 +242,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
               />
               <img
                 src={planetImagePath3}
-                className="absolute w-[80%] h-[160px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                className={`${
+                  isLargeDevice ? "top-[70%]" : "top-0"
+                } absolute w-[80%] h-[160px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
                 alt="planet_geology"
               />
             </div>
