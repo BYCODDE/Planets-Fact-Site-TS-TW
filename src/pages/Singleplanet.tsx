@@ -17,6 +17,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
   );
 
   const isMediumDevice = useMediaQuery("only screen and (min-width : 769px)");
+  const isLargeDevice = useMediaQuery(
+    "only screen and (min-width : 993px) "
+  );
 type PlanetName =
   | "Mercury"
   | "Venus"
@@ -106,21 +109,51 @@ type PlanetName =
         backgroundPosition: "center",
       }}
     >
-      <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
+      {isLargeDevice ? null : (
+        <Header Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
+      )}
       {isMediumDevice ? null : (
         <Menu Burger={Burger} setBurger={setBurger} burger_svg={burger_svg} />
       )}
 
       {isMediumDevice ? (
-        <div className="flex font-[400] text-[15px] tracking-[1.5px] font-spartan mt-[40px] justify-evenly text-[#fff] opacity-80 ">
-          <Link to="/planet/mercury/overview">Mercury</Link>
-          <Link to="/planet/venus/overview">Venus</Link>
-          <Link to="/planet/earth/overview">Earth</Link>
-          <Link to="/planet/mars/overview">Mars</Link>
-          <Link to="/planet/jupiter/overview">Jupiter</Link>
-          <Link to="/planet/saturn/overview">Saturn</Link>
-          <Link to="/planet/uranus/overview">Uranus</Link>
-          <Link to="/planet/neptune/overview">Neptune</Link>
+        <div
+          className={` ${
+            isLargeDevice
+              ? "items-center justify-between"
+              : "justify-evenly items-baseline"
+          }     flex font-[400] text-[15px] tracking-[1.5px] font-spartan mt-[40px]  text-[#fff] opacity-80`}
+        >
+          {isLargeDevice ? (
+            <Header
+              Burger={Burger}
+              setBurger={setBurger}
+              burger_svg={burger_svg}
+            />
+          ) : null}
+          {isLargeDevice ? (
+            <div className="flex gap-[33px]">
+              <Link to="/planet/mercury/overview">Mercury</Link>
+              <Link to="/planet/venus/overview">Venus</Link>
+              <Link to="/planet/earth/overview">Earth</Link>
+              <Link to="/planet/mars/overview">Mars</Link>
+              <Link to="/planet/jupiter/overview">Jupiter</Link>
+              <Link to="/planet/saturn/overview">Saturn</Link>
+              <Link to="/planet/uranus/overview">Uranus</Link>
+              <Link to="/planet/neptune/overview">Neptune</Link>
+            </div>
+          ) : (
+            <>
+              <Link to="/planet/mercury/overview">Mercury</Link>
+              <Link to="/planet/venus/overview">Venus</Link>
+              <Link to="/planet/earth/overview">Earth</Link>
+              <Link to="/planet/mars/overview">Mars</Link>
+              <Link to="/planet/jupiter/overview">Jupiter</Link>
+              <Link to="/planet/saturn/overview">Saturn</Link>
+              <Link to="/planet/uranus/overview">Uranus</Link>
+              <Link to="/planet/neptune/overview">Neptune</Link>
+            </>
+          )}
         </div>
       ) : (
         <div className="flex font-bold text-[9px] tracking-[1.929px] font-spartan mt-[40px] justify-between">
@@ -292,6 +325,9 @@ type PlanetName =
             : "flex-col"
         } flex justify-center  gap-[10px] pb-[30px] text-[#FFFFFF] font-[500]`}
       >
+
+{/* TODO:////////////////////////////////////////////////////////// */}
+
         <div
           className={`${
             isMediumDevice ? "flex-col items-baseline w-[164px]	" : "flex-row"
