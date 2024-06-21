@@ -17,8 +17,17 @@ const Singleplanet: React.FC<BurgerProps> = ({
   );
 
   const isMediumDevice = useMediaQuery("only screen and (min-width : 769px)");
+type PlanetName =
+  | "Mercury"
+  | "Venus"
+  | "Earth"
+  | "Mars"
+  | "Jupiter"
+  | "Saturn"
+  | "Uranus"
+  | "Neptune";
 
-  const getPlanetClass = (planetName: string | undefined) => {
+  const getPlanetClass = (planetName: PlanetName | undefined): string => {
     switch (planetName) {
       case "Venus":
         return isMediumDevice ? "w-[253px] h-[253px]" : "w-[154px] h-[154px]";
@@ -39,29 +48,49 @@ const Singleplanet: React.FC<BurgerProps> = ({
     }
   };
 
-  const getPlanetStyles = (planetName: string | undefined) => {
-    switch (planetName) {
-      case "Venus":
-        return "border-b-4 border-[#EDA249] pb-[17px]";
-      case "Earth":
-        return "border-b-4 border-[#6D2ED5] pb-[17px]";
-      case "Mars":
-        return "border-b-4 border-[#D14C32] pb-[17px]";
-      case "Jupiter":
-        return "border-b-4 border-[#D83A34] pb-[17px]";
-      case "Saturn":
-        return "border-b-4 border-[#CD5120] pb-[17px]";
-      case "Uranus":
-        return "border-b-4 border-[#1EC1A2] pb-[17px]";
-      case "Neptune":
-        return "border-b-4 border-[#2D68F0] pb-[17px]";
-      default:
-        return " border-b-4 border-[#419EBB] pb-[17px]";
+
+  const getPlanetStyles = (planetName: PlanetName | undefined): string => {
+    const commonStyles = "border-b-4 pb-[11px]";
+    const planetStyles: { [key in PlanetName]: string } = {
+      Mercury: isMediumDevice
+        ? "bg-[#419EBB]"
+        : `${commonStyles} border-[#419EBB]`,
+      Venus: isMediumDevice
+        ? "bg-[#EDA249]"
+        : `${commonStyles} border-[#EDA249]`,
+      Earth: isMediumDevice
+        ? "bg-[#6D2ED5]"
+        : `${commonStyles} border-[#6D2ED5]`,
+      Mars: isMediumDevice
+        ? "bg-[#D14C32]"
+        : `${commonStyles} border-[#D14C32]`,
+      Jupiter: isMediumDevice
+        ? "bg-[#D83A34]"
+        : `${commonStyles} border-[#D83A34]`,
+      Saturn: isMediumDevice
+        ? "bg-[#CD5120]"
+        : `${commonStyles} border-[#CD5120]`,
+      Uranus: isMediumDevice
+        ? "bg-[#1EC1A2]"
+        : `${commonStyles} border-[#1EC1A2]`,
+      Neptune: isMediumDevice
+        ? "bg-[#2D68F0]"
+        : `${commonStyles} border-[#2D68F0]`,
+    };
+
+    if (planetName) {
+      return planetStyles[planetName];
     }
+
+    return isMediumDevice ? "bg-[#419EBB]" : `${commonStyles} border-[#419EBB]`;
   };
 
-  const planetClass = getPlanetClass(currentPlanet?.name);
-  const planetStyles = getPlanetStyles(currentPlanet?.name);
+
+  const planetName: PlanetName | undefined = currentPlanet?.name as
+    | PlanetName
+    | undefined;
+  const planetClass = getPlanetClass(planetName);
+  const planetStyles = getPlanetStyles(planetName);
   const planetImagePath = currentPlanet?.images.planet;
   const planetImagePath2 = currentPlanet?.images.internal;
   const planetImagePath3 = currentPlanet?.images.geology;
@@ -190,8 +219,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
           <div>
             <div className="flex font-bold text-[15px] tracking-[2px] font-spartan mt-[40px] justify-center flex-col  leading-[25px] gap-[16px]">
               <Link
-                className={`border border-[#fff] border-opacity-20 w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]
-                  font-[400]`}
+                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px] font-[400] ${
+                  isMediumDevice && details === "overview" && planetStyles
+                }`}
                 to={`/planet/${currentPlanet?.name}/overview`}
               >
                 <span className="opacity-50">01</span>
@@ -199,7 +229,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
               </Link>
 
               <Link
-                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]  font-[400]`}
+                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px] font-[400] ${
+                  isMediumDevice && details === "structure" && planetStyles
+                }`}
                 to={`/planet/${currentPlanet?.name}/structure`}
               >
                 <span className="opacity-50">02</span>
@@ -207,7 +239,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
               </Link>
 
               <Link
-                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px]  font-[400]`}
+                className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px] font-[400] ${
+                  isMediumDevice && details === "surface" && planetStyles
+                }`}
                 to={`/planet/${currentPlanet?.name}/surface`}
               >
                 <span className="opacity-50">03</span>
@@ -253,7 +287,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
 
       <div
         className={`${
-          isMediumDevice ? "flex-row gap-0 justify-between p-[30px] pt-[0px]" : "flex-col"
+          isMediumDevice
+            ? "flex-row gap-0 justify-between p-[30px] pt-[0px]"
+            : "flex-col"
         } flex justify-center  gap-[10px] pb-[30px] text-[#FFFFFF] font-[500]`}
       >
         <div
