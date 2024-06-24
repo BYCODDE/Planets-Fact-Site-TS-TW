@@ -149,8 +149,8 @@ const Singleplanet: React.FC<BurgerProps> = ({
           className={` ${
             isLargeDevice
               ? "items-center justify-between"
-              : "justify-evenly items-baseline"
-          }     flex font-[400] text-[15px] tracking-[1.5px] font-spartan mt-[40px]  text-[#fff] opacity-80`}
+              : "justify-evenly items-baseline mt-[40px]"
+          }     flex font-[400] text-[15px] tracking-[1.5px] font-spartan  text-[#fff] opacity-80`}
         >
           {isLargeDevice ? (
             <Header
@@ -217,13 +217,17 @@ const Singleplanet: React.FC<BurgerProps> = ({
       )}
 
       <hr
-        className={`${isMediumDevice ? "mt-[30px]" : "mt-[20px]"}
-      "h-[1px] w-full opacity-10  absolute top-[121px] right-0 left-0"`}
+        className={`
+    ${isLargeDevice ? "top-[100px]" : ""}
+    ${!isLargeDevice && isMediumDevice ? "top-[147px]" : ""}
+    ${!isLargeDevice && !isMediumDevice ? "top-[141px]" : ""}
+    h-[1px] w-full opacity-10 absolute right-0 left-0
+  `}
       />
 
       <div
         className={`${
-          isLargeDevice ? " flex justify-around items-center mt-[130px]" : ""
+          isLargeDevice ? " flex justify-around items-center mt-[30px]" : ""
         }`}
       >
         <div className="flex justify-center mt-[95px] mb-[98px]">
@@ -243,7 +247,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
               <img
                 src={planetImagePath3}
                 className={`${
-                  isLargeDevice ? "top-[70%]" : "top-0"
+                  isLargeDevice ? "top-[70%]" : ""
                 } absolute w-[80%] h-[160px]  left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
                 alt="planet_geology"
               />
@@ -260,7 +264,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
           <div
             className={`${
               isLargeDevice ? "flex-col -" : "justify-between items-center"
-            } text-[#FFFFFF] flex  p-[30px]`}
+            } text-[#FFFFFF] flex  `}
           >
             <div className={`${isMediumDevice ? "max-w-[339px]" : ""}`}>
               {" "}
@@ -302,7 +306,7 @@ const Singleplanet: React.FC<BurgerProps> = ({
               </div>
             </div>
             <div>
-              <div className="flex font-bold text-[15px] tracking-[2px] font-spartan mt-[40px] justify-center flex-col  leading-[25px] gap-[16px]">
+              <div className="flex font-bold text-[15px] tracking-[2px] font-spartan  justify-center flex-col  leading-[25px] gap-[16px]">
                 <Link
                   className={`border border-[#fff] border-opacity-20 max-w-[340px] max-h-[40px] p-[24px] flex justify-left items-center gap-[17px] font-[400] ${
                     isMediumDevice && details === "overview" && planetStyles
@@ -377,11 +381,9 @@ const Singleplanet: React.FC<BurgerProps> = ({
             ? "flex-row gap-0 justify-between p-[30px] pt-[0px]"
             : "flex-col"
         } ${
-          isLargeDevice ? "mt-[90px]" : ""
-        } flex justify-center  gap-[10px] pb-[30px] text-[#FFFFFF] font-[500]`}
+          isLargeDevice ? "mt-[45px]" : ""
+        } flex justify-center  gap-[10px]  p-0 text-[#FFFFFF] font-[500]`}
       >
-        {/* TODO:////////////////////////////////////////////////////////// */}
-
         <div
           className={`${
             isMediumDevice ? "flex-col items-baseline w-[164px]	" : "flex-row"

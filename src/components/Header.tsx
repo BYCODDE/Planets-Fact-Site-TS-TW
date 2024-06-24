@@ -6,7 +6,6 @@ const Header: React.FC<BurgerProps> = ({ Burger, setBurger, burger_svg }) => {
   const isMediumDevice = useMediaQuery(
     "only screen and (min-width : 769px)"
   );
-    console.log(isMediumDevice);
 
   return (
     <>
