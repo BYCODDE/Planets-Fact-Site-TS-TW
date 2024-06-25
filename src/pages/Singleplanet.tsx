@@ -378,11 +378,11 @@ const Singleplanet: React.FC<BurgerProps> = ({
       <div
         className={`${
           isMediumDevice
-            ? "flex-row gap-0 justify-between p-[30px] pt-[0px]"
+            ? "flex-row gap-0 justify-between  pt-[0px]"
             : "flex-col"
         } ${
           isLargeDevice ? "mt-[45px]" : ""
-        } flex justify-center  gap-[10px]    p-0 text-[#FFFFFF] font-[500]`}
+        } flex justify-center  gap-[10px]  p-0 text-[#FFFFFF] font-[500]`}
       >
         <div
           className={`${
